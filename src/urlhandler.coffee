@@ -7,11 +7,11 @@ class URLHandler
         if not cb
             cb = options if typeof options is 'function'
             options = {}
-
         if options.response?
             # Trick: the VAST response XML document is passed as an option
-            response = options.response
+            response = (new DOMParser()).parseFromString(options.response, "text/xml")
             delete options.response
+
             cb(null, response)
         else if options.urlhandler?.supported()
             # explicitly supply your own URLHandler object

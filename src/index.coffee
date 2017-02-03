@@ -3,3 +3,4 @@ module.exports =
     tracker: require './tracker'
     parser: require './parser'
     util: require './util'
+    vmapclient: require './vmapclient'

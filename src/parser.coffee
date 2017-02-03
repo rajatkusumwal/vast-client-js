@@ -60,6 +60,7 @@ class VASTParser
 
             response = new VASTResponse()
 
+
             unless xml?.documentElement? and xml.documentElement.nodeName is "VAST"
                 return cb(new Error('Invalid VAST XMLDocument'))
 
